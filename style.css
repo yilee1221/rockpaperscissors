@@ -2,13 +2,16 @@ body {
     margin: 50px;
     padding:0;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+    background-color: #A1C9FF;
+    color: #EEF5FF;
 }
 
 .header {
     display: flex;
     flex-direction: column;
     text-align: center;
+
+    
 
 }
 .winlose {
@@ -21,20 +24,22 @@ body {
     display: flex;
     justify-content: center;
 
-    margin: 20px;    
+    margin: 30px;    
     gap: 150px;
 }
 
 .p-score, .c-score {
-    min-width: 90px;
-    height: 100px;
+    min-width: 110px;
+    height: 120px;
 
-    border: 2px solid black;
+    border: 3px solid #0E41B1;
+    border-radius: 1em;
     text-align: center;
 }
 
 .score1, .score2 {
-    border-bottom: 2px solid black;
+    border-bottom: 3px solid #0E41B1;
+    padding: 3px;
 }
 .players {
     display: flex;
@@ -51,9 +56,13 @@ body {
 
 button {
     padding: 20px;
-    font-size: 20px;
+    font-size: 18px;
+    border: none;
     border-radius: 3em;
-    min-width: 120px;
+    min-width: 135px;
+
+    color: #EEF5FF;
+    background-color: #0E41B1;
 }
 span {
     font-size: 100px;
