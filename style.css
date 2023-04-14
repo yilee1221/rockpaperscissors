@@ -1,0 +1,60 @@
+body {
+    margin: 50px;
+    padding:0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+.winlose {
+    display:flex;
+    justify-content: center;
+
+    margin: 50px;
+}
+.scoreboard {
+    display: flex;
+    justify-content: center;
+
+    margin: 20px;    
+    gap: 150px;
+}
+
+.p-score, .c-score {
+    min-width: 90px;
+    height: 100px;
+
+    border: 2px solid black;
+    text-align: center;
+}
+
+.score1, .score2 {
+    border-bottom: 2px solid black;
+}
+.players {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+}
+
+.player, .computer {
+    display:flex;
+    align-items: center;
+    gap: 20px;
+}
+
+button {
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 3em;
+    min-width: 120px;
+}
+span {
+    font-size: 100px;
+}

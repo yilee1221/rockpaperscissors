@@ -1,75 +1,49 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Page Title</title>
-</head>
-<body>
-  <script>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Rock Paper Scissors</title>
+        <link rel = 'stylesheet' href="style.css">
+        <script src = 'script.js'></script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>ROCK PAPER SCISSORS</h1>
+            <h3>The first player to get 5 points wins the game.</h3>
+        </div>
 
-    function getComputerChoice() {
-        let playOptions = ['Rock','Paper','Scissors'];
-        let randomPlay = Math.floor(Math.random()*playOptions.length);
-        return playOptions[randomPlay]
-    }
+        <div class="scoreboard">
+            <div class="p-score">
+                <div class="score1">PLAYER</div>
+            </div>
+            <div class="c-score">
+                <div class="score2">COMPUTER</div>
+            </div>
+        </div>
 
-    function playRound(playerSelection, computerSelection) {
-        playerSelection = playerSelection.toLowerCase();
-        computerSelection = computerSelection.toLowerCase();
+        <div class="winlose">YOU WIN</div>
 
-        if(playerSelection === computerSelection) {
-            return "Tie! Try again."
-        }
-        if (playerSelection === "rock") {
-            if (computerSelection === "paper") {
-                return "You lose. Paper beats rock"
-            }
-            if (computerSelection === "scissors") {
-                return "You win! Rock beats scissors"
-            }
-        }
-        if (playerSelection === "paper") {
-            if (computerSelection === "rock") {
-                return "You win! Paper beats rock"
-            }
-            if (computerSelection === "scissors") {
-                return "You lose. Scissors beat paper"
-            }
-        }
-        if (playerSelection === "scissors") {
-            if (computerSelection === "rock") {
-                return "You lose. Rock beats scissors"
-            }
-            if (computerSelection === "paper") {
-                return "You win! Scissors beat paper"
-            }
-        }
+        <div class="players">
+            <div class="player">
+                <span class="person">👤</span>
+                <button class="rock">Rock</button>
+                <button class="paper">Paper</button>
+                <button class="scissors">Scissors</button>
+            </div>
+            
+            <div class="computer">
+                <button class="rock">Rock</button>
+                <button class="paper">Paper</button>
+                <button class="scissors">Scissors</button>
+                <span class="comp">💻</span>
+            </div>
+        </div>
 
-    }
+        <div class="winlose">YOU WIN THE GAME</div>
+        
 
-    function game() {
-        let playerCount = 0;
-        let compCount = 0;
-        for (let i = 0; i < 5; i++) {
-            let playerSelection = prompt("Rock, paper, or scissors? ");
-            let computerSelection = getComputerChoice();
-            console.log(playerSelection);
-            console.log(computerSelection);
-            let oneRound = playRound(playerSelection, computerSelection);
-            console.log(oneRound);
-            if (oneRound.startsWith("You win")) {
-                playerCount++;
-            } else if (oneRound.startsWith("You lose")){
-                compCount++;
-            }
-        }
-        if (playerCount > compCount) {
-            return "You win the game!";
-        } else {
-            return "You lose!";
-        }
-    }
-    console.log(game());
-  </script>
-</body>
+        <div class="footer">
+
+        </div>
+    </body>
 </html>
