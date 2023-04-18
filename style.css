@@ -20,7 +20,7 @@ h3 {
     display:flex;
     justify-content: center;
 
-    margin: 50px;
+    margin: 40px;
 }
 .scoreboard {
     display: flex;
@@ -52,7 +52,6 @@ h3 {
 }
 
 
-
 .players {
     display: flex;
     justify-content: center;
@@ -69,13 +68,31 @@ h3 {
 button {
     padding: 20px;
     font-size: 18px;
-    border: none;
+    border: 5px solid #A1C9FF;
     border-radius: 3em;
     min-width: 135px;
 
     color: #EEF5FF;
     background-color: #014BDF;
+
 }
 span {
     font-size: 100px;
+}
+
+.player button:hover, 
+.restart button:hover {
+    transform: scale(1.1);
+    border-color: #022978;
+
+}
+
+.chosen {
+    border-color:#022978;
+    transition: border-width 0.6s linear;
+}
+
+.restart {
+    display:flex;
+    justify-content: center;
 }

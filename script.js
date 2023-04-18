@@ -18,10 +18,34 @@ function getComputerChoice() {
     return playOptions[randomPlay]
 }
 
+function restartGame(buttons) {
+    const restartButton = document.createElement('button');
+    restartButton.classList.add('restart');
+    restartButton.textContent = 'RESTART';
+    const restart = document.querySelector('.restart');
+    restart.appendChild(restartButton);
+
+    restartButton.addEventListener('click', () => {
+        score1 = 0;
+        score2 = 0;
+        updateScore();
+
+        winlose.textContent = '';
+        gamePoint.textContent = '';
+        restartButton.remove();
+    })
+
+    buttons = document.querySelectorAll('.player button');
+    buttons.forEach((button) => button.disabled = false);
+
+}
+
 function playRound(playerSelection, computerSelection) {
     computerSelection = getComputerChoice();
-    console.log(computerSelection)
     playerSelection = this.classList.value;
+    const compButton = document.getElementById(computerSelection);
+    
+    console.log(compButton);
     
     if(playerSelection === computerSelection) {
         winlose.textContent = "TIE! TRY AGAIN";
@@ -62,16 +86,21 @@ function playRound(playerSelection, computerSelection) {
             updateScore();
         }
     }
+    
+    //compButton.classList.toggle('chosen');
+    //compButton.classList.remove('chosen');
 
     if (score1 == 5 || score2 == 5) {
+        const buttons = document.querySelectorAll('.player button');
+        buttons.forEach((button) => button.disabled = true);
         if (score1 > score2) {
             gamePoint.textContent = "YOU WON THE GAME"
+            restartGame();
         } else {
             gamePoint.textContent = "YOU LOST THE GAME"
+            restartGame();
         }
-        
     }
-
 }
 
 const buttons = document.querySelectorAll('.player button');
@@ -81,28 +110,4 @@ buttons.forEach((button) => {
 
 
 
-/*
-function game() {
-    let playerCount = 0;
-    let compCount = 0;
 
-    
-        let playerSelection = prompt("Rock, paper, or scissors? ");
-        let computerSelection = getComputerChoice();
-        console.log(playerSelection);
-        console.log(computerSelection);
-        let oneRound = playRound(playerSelection, computerSelection);
-        console.log(oneRound);
-        if (oneRound.startsWith("You win")) {
-            playerCount++;
-        } else if (oneRound.startsWith("You lose")){
-            compCount++;
-        }
-    if (playerCount > compCount) {
-        return "You win the game!";
-    } else {
-        return "You lose!";
-    }
-}
-console.log(game());
-*/
