@@ -33,10 +33,12 @@ function restartGame(buttons) {
         winlose.textContent = '';
         gamePoint.textContent = '';
         restartButton.remove();
+
+        buttons = document.querySelectorAll('.player button');
+        buttons.forEach((button) => button.disabled = false);
     })
 
-    buttons = document.querySelectorAll('.player button');
-    buttons.forEach((button) => button.disabled = false);
+    
 
 }
 
