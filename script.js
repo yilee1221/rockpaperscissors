@@ -37,9 +37,6 @@ function restartGame(buttons) {
         buttons = document.querySelectorAll('.player button');
         buttons.forEach((button) => button.disabled = false);
     })
-
-    
-
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -59,7 +56,7 @@ function playRound(playerSelection, computerSelection) {
             updateScore();
         }
         if (computerSelection === "scissors") {
-            winlose.textContent = "YOU WIN! ROCK BEATS PAPER";
+            winlose.textContent = "YOU WIN! ROCK BEATS SCISSORS";
             score1++;
             updateScore();
         }
@@ -90,24 +87,37 @@ function playRound(playerSelection, computerSelection) {
     }
     
     //compButton.classList.toggle('chosen');
-    //compButton.classList.remove('chosen');
+    compButton.classList.add('chosen');
 
     if (score1 == 5 || score2 == 5) {
         const buttons = document.querySelectorAll('.player button');
         buttons.forEach((button) => button.disabled = true);
         if (score1 > score2) {
-            gamePoint.textContent = "YOU WON THE GAME"
+            gamePoint.textContent = "YOU WON THE GAME";
             restartGame();
+            highlightComp();
         } else {
-            gamePoint.textContent = "YOU LOST THE GAME"
+            gamePoint.textContent = "YOU LOST THE GAME";
             restartGame();
+            highlightComp();
         }
     }
+}
+
+function highlightComp() {
+    const compButtons = document.querySelectorAll('.computer button');
+    compButtons.forEach((button) => {
+        if (button.classList.contains('chosen')) {
+            button.classList.remove('chosen');
+        }
+    });
+    
 }
 
 const buttons = document.querySelectorAll('.player button');
 buttons.forEach((button) => {
     button.addEventListener('click', playRound);
+    button.addEventListener('mouseleave', highlightComp);
 });
 
 
